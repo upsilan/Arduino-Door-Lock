@@ -7,19 +7,23 @@
 //white = rx
 //black = ground
 
+#include <Wire.h>
+#include <SoftwareSerial.h>
+#include <Adafruit_Fingerprint.h>
 
 const int buzzer = 9;
 const int buzzerNegative = 7;
+SoftwareSerial mySerial(2, 3);
 
 void setup()
 {
   pinMode(buzzerNegative, OUTPUT);
   pinMode(buzzer, OUTPUT);
-  digitalWrite(buzzerNegative, LOW);  
-  delay(1000);
-  allow();
-  delay(3000);
-  wrong();
+  digitalWrite(buzzerNegative, LOW);
+
+  Serial.begin(9600);
+
+  fingerprintSetup();
 }
 
 void loop()
