@@ -1,6 +1,13 @@
 const int buzzer = 9;
 const int buzzerNegative = 7;
 
+void buzzerSetup()
+{
+  pinMode(buzzerNegative, OUTPUT);
+  pinMode(buzzer, OUTPUT);
+  digitalWrite(buzzerNegative, LOW);
+}
+
 void allow()
 {
   tone(buzzer, 440, 750);

@@ -15,16 +15,19 @@ SoftwareSerial mySerial(2, 3);
 
 void setup()
 {
-  pinMode(buzzerNegative, OUTPUT);
-  pinMode(buzzer, OUTPUT);
-  digitalWrite(buzzerNegative, LOW);
 
   Serial.begin(9600);
+  buzzerSetup();
 
   fingerprintSetup();
+  keypadSetup();
 }
 
 void loop()
 {
-  
+  //sleep until interrupt
+  //if interrupt came from keypad (possible shortcut if you know what pin interrupted it so you don't have to 0 run everything?)
+  //do keypad logic
+  //else if interrupt came from fingerprint sensor scan fingerprint
+  //get fingerprint
 }

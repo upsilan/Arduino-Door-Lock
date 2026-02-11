@@ -15,4 +15,5 @@ void fingerprintSetup()
       delay(1);
     }
   }
+  Serial.println("finished fingerprint setup");
 }
