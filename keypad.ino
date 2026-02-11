@@ -1,8 +1,7 @@
-const int rows[] = {}; //set this later
-const int r = sizeof(rows);
-const int cols[] = {}; //set this later
-const int c = sizeof(cols);
-
+const int cols[] = {8, 7, 6};
+const int c = 3;
+const int rows[] = {12, 11, 10, 9};
+const int r = 4;
 
 void keypadSetup()
 {
@@ -26,31 +25,32 @@ char runningZero()
   char lastReading = ' ';
   char currentReading = ' ';
 
-  const char keypad[4][4] = {
-    {'1', '2', '3', 'A'},
-    {'4', '5', '6', 'B'},
-    {'7', '8', '9', 'C'},
-    {'*', '0', '#', 'D'}
+  const char keypad[4][3] = {
+    {'1', '2', '3'},
+    {'4', '5', '6'},
+    {'7', '8', '9'},
+    {'*', '0', '#'}
   };
   //reset all the outputs to high (undistinguishable)
-  for(int i = 0; i < 4; i++)
+  for(int i = 0; i < r; i++)
   {
     digitalWrite(rows[i], HIGH);
   }
 
   
   //for each input
-  for(int i = 0; i < 4; i++)
+  for(int i = 0; i < c; i++)
   {
     //turn on all outputs and try to see if anything is down
-    for(int j = 0; j < 4; j++)
+    for(int j = 0; j < r; j++)
     {
       //get the output working
       digitalWrite(rows[j], LOW);
       if(digitalRead(cols[i]) == LOW)
       {
         digitalWrite(rows[j], HIGH);
-        currentReading = keypad[i][j];
+        currentReading = keypad[j][i];
+        Serial.println(currentReading);
       }
       //reset the output back
       digitalWrite(rows[j], HIGH);
@@ -70,6 +70,7 @@ char runningZero()
     {
       lastReading = currentReading;
       if(currentReading != ' ')
+      tone(440, 50);
       return currentReading;
     }
   }

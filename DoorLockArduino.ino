@@ -25,6 +25,7 @@ void setup()
 
 void loop()
 {
+  runningZero();
   //sleep until interrupt
   //if interrupt came from keypad (possible shortcut if you know what pin interrupted it so you don't have to 0 run everything?)
   //do keypad logic

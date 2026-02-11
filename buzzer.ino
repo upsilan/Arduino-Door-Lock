@@ -1,5 +1,5 @@
-const int buzzer = 9;
-const int buzzerNegative = 7;
+const int buzzer = 4;
+const int buzzerNegative = 5;
 
 void buzzerSetup()
 {
@@ -22,9 +22,9 @@ void wrong()
   }
 }
 
-void tone(int pin, int pitch, int timeMilliseconds)
+void tone(int pitch, int timeMilliseconds)
 {
-  tone(pin, pitch);
+  tone(buzzer, pitch);
   delay(timeMilliseconds);
-  noTone(pin);
+  noTone(buzzer);
 }
