@@ -1,0 +1,10 @@
+add all sound options to the buzzer
+add password logic for guessing password
+add all the keypad states
+add fingerprint validation and not just enrolling
+at the end change the sleep time from 3 seconds to like 20-30 and make it dynamic so that if u press something it gets longer
+fix bug where if you stop in the middle of fingerprint enrollment the arduino will not sleep
+make sure running zero actually works with the irl keypad
+add the electromagnet lock to the code
+add the electromagnet lock irl
+add some 3d prints such as a new handle and a case for the entire thing
