@@ -10,25 +10,29 @@
 #include <Wire.h>
 #include <SoftwareSerial.h>
 #include <Adafruit_Fingerprint.h>
+#include <LowPower.h>
 
-SoftwareSerial mySerial(2, 3);
+SoftwareSerial mySerial(6, 7);
 
 void setup()
 {
-
   Serial.begin(9600);
   buzzerSetup();
 
   fingerprintSetup();
   keypadSetup();
+  sleepSetup();
 }
 
 void loop()
 {
-  runningZero();
-  //sleep until interrupt
-  //if interrupt came from keypad (possible shortcut if you know what pin interrupted it so you don't have to 0 run everything?)
-  //do keypad logic
-  //else if interrupt came from fingerprint sensor scan fingerprint
-  //get fingerprint
+  startSleep();
+  //will sleep until interrupt
+  wakeUp();
+  unsigned long TimeSinceWakeup = millis();
+  while(millis() - TimeSinceWakeup < 30000)
+  {
+    Serial.println("awake!");
+  }
+  //this will loop back and sleep until woken up again
 }
