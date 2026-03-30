@@ -15,7 +15,9 @@ USAGE GUIDE:
 -to add a fingerprint press #2 and wait for the two beeps, authenticate, then press an ID number and press # again to enter it.
  then put your fingerprint 3 times (each ID is actually taking 3 internal ID's such that id N is N*3, N*3 + 1, N*3 + 2)
 
--to remove a fingerprint press #9 and wait for three beeps, then authenticate and select an ID to remove
+-to remove a fingerprint press #8 and wait for three beeps, then authenticate and select an ID to remove
+
+-to remove all fingerprints press #9 wait for 5 beeps, then authenticate
 
 -to exit any of these modes or to start inputing the code type *
 
@@ -32,5 +34,7 @@ beeps:
     2 long beeps - entered fingerprint add mode
 
     3 long beeps - entered fingerprint removal mode
+
+    5 long beeps - entered fingerprint erase all mode
 
     short beeps - key presses

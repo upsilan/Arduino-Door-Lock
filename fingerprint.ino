@@ -32,6 +32,16 @@ void getFingerCount()
   Serial.println("found " + String(finger.templateCount) + " fingers");
 }
 
+bool isFingerTouching() //MAKE THIS WORK LATER TODO!!!
+{
+  return false;
+}
+
+bool isValidFinger() //THIS TOOOOOOO
+{
+  return false;
+}
+
 void enroll(int myID)
 {
   Serial.println("Ready to enroll a fingerprint!");

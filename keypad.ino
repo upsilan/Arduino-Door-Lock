@@ -3,6 +3,8 @@ const int c = 3;
 const int rows[] = {12, 11, 10, 9};
 const int r = 4;
 
+char password[] = {'1', '2', '3', '4'};
+
 void keypadSetup()
 {
   for(int i = 0; i < c; i++)
@@ -15,6 +17,21 @@ void keypadSetup()
     digitalWrite(rows[i], LOW);
   }
   Serial.println("finished keypad setup");
+}
+
+void changePassword(char newPass[4])
+{
+  for(int i = 0; i < 4; i++)
+  {
+    password[i] = newPass[i];
+  }
+}
+
+bool authenticatePassword(char attempt[4])
+{
+  Serial.println(password);
+  Serial.println(attempt);
+  return password == attempt; //maybe would always return true since char[4] = char[4] if so make it return true if p[0] == a[0] && p[1] == a[1] etc etc
 }
 
 char runningZero()

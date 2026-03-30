@@ -3,15 +3,23 @@ int interrupts[numberOfInterrupts] = {2, 3};
 
 void sleepSetup()
 {
-  pinMode(2, INPUT_PULLUP);
-  pinMode(3, INPUT_PULLUP);
+  for(int i = 0; i < numberOfInterrupts; i++)
+  {
+    pinMode(interrupts[i], INPUT_PULLUP);
+  }
 }
 
 void startSleep()
 {
+  noTone(buzzer);
+  for(int i = 0; i < 4; i++)
+  {
+    input_kp[i] = ' ';
+  }
+  index = 0;
   for(int i = 0; i < numberOfInterrupts; i++)
   {
-    attachInterrupt(digitalPinToInterrupt(interrupts[i]), wakeUp, FALLING);
+    attachInterrupt(digitalPinToInterrupt(interrupts[i]), wakeUp, RISING);
   }
   LowPower.powerDown(SLEEP_FOREVER, ADC_OFF, BOD_OFF);
 }
