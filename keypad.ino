@@ -87,8 +87,10 @@ char runningZero()
     {
       lastReading = currentReading;
       if(currentReading != ' ')
-      tone(440, 50);
-      return currentReading;
+      {
+        tone(440, 50);
+        return currentReading;
+      }
     }
   }
   lastReading = currentReading;

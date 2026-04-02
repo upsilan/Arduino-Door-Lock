@@ -8,3 +8,4 @@ make sure running zero actually works with the irl keypad
 add the electromagnet lock to the code
 add the electromagnet lock irl
 add some 3d prints such as a new handle and a case for the entire thing
+add an indicator LED for sleep

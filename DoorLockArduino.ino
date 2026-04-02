@@ -71,7 +71,6 @@ void keypadLogic()
   //this is a nightmare of a state machine and i hate it so much and it also includes the fingerprint in it and fuck that since i want you to be able to press a button and then decide actually no
   // fingerprint but if i make it like this it makes it a bit hellish
   char temp = runningZero();   // this line may not work as of now, will check when keypad will arrive from aliexpress
-  if (temp == ' ') { return; }
   switch(temp)
   {
     case '1':
